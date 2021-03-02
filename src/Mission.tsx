@@ -23,7 +23,7 @@ const getRnd = (array: string[]): string => {
 
 const Objective = ({ Icon, text }: ObjectiveProps) => {
   return (
-    <div className="flex items-center bg-gray-200 py-2 rounded-md mb-2">
+    <div className="flex items-center bg-gray-200 py-2 rounded-md mb-2 shadow">
       <Icon className="mx-3" /> {text}
     </div>
   );
