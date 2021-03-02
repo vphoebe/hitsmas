@@ -1,4 +1,4 @@
-export type LocationType = {
+export type MissionType = {
   location: string;
   title: string;
   targets: string[];

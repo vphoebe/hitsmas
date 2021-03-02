@@ -1,5 +1,5 @@
 import * as React from "react";
-import { LocationType } from "./types";
+import { MissionType } from "./types";
 
 interface TargetProps {
   target: string;
@@ -22,22 +22,22 @@ const Target = ({ target, disguise, weapon }: TargetProps) => {
   );
 };
 
-const Location = ({ location }: { location: LocationType }) => {
-  const targets = location.targets;
+const Mission = ({ mission }: { mission: MissionType }) => {
+  const targets = mission.targets;
   return (
     <>
       <h1>
-        {location.location}: {location.title}
+        {mission.location}: {mission.title}
       </h1>
       {targets.map((trg) => (
         <Target
           target={trg}
-          disguise={getRnd(location.disguises)}
-          weapon={getRnd(location.weapons.lethal)}
+          disguise={getRnd(mission.disguises)}
+          weapon={getRnd(mission.weapons.lethal)}
         />
       ))}
     </>
   );
 };
 
-export default Location;
+export default Mission;
