@@ -16,6 +16,7 @@ interface ObjectiveProps {
 }
 
 const getRnd = (array: string[]): string => {
+  // FIXME: prevent same random values within a mission objective type
   const idx = Math.floor(Math.random() * Math.floor(array.length));
   return array[idx];
 };
@@ -45,7 +46,7 @@ const Target = ({ target, disguise, weapon }: TargetProps) => {
 const Mission = ({ mission }: { mission: MissionType }) => {
   const targets = mission.targets;
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col p-8 pt-2">
       {targets.map((trg) => (
         <Target
           target={trg}
