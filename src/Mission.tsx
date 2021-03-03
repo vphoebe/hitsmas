@@ -15,11 +15,14 @@ interface ObjectiveProps {
   text: string;
 }
 
-const getRnd = (array: string[]): string => {
-  // FIXME: prevent same random values within a mission objective type
-  const idx = Math.floor(Math.random() * Math.floor(array.length));
-  return array[idx];
-};
+function shuffleArray(array: string[]) {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
 
 const Objective = ({ Icon, text }: ObjectiveProps) => {
   return (
@@ -45,13 +48,16 @@ const Target = ({ target, disguise, weapon }: TargetProps) => {
 
 const Mission = ({ mission }: { mission: MissionType }) => {
   const targets = mission.targets;
+  const disguises = shuffleArray(mission.disguises);
+  const weapons = shuffleArray(mission.weapons.lethal);
+  console.log(disguises, weapons);
   return (
     <div className="flex flex-col p-8 pt-2">
-      {targets.map((trg) => (
+      {targets.map((trg, i) => (
         <Target
           target={trg}
-          disguise={getRnd(mission.disguises)}
-          weapon={getRnd(mission.weapons.lethal)}
+          disguise={disguises[i]}
+          weapon={weapons[i]}
           key={trg.toLowerCase().trim()}
         />
       ))}
