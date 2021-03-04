@@ -1,7 +1,7 @@
 import * as React from "react";
 import { MissionType } from "./types";
-import data from "./data";
-import { FaGlobe, FaAngleDown } from "react-icons/fa";
+import { FaGlobe, FaAngleDown, FaAngleUp } from "react-icons/fa";
+import SelectList from "./SelectList";
 
 interface SelectPropTypes {
   selectedMission: MissionType;
@@ -9,19 +9,30 @@ interface SelectPropTypes {
 }
 
 const Select = ({ selectedMission, setSelectedMission }: SelectPropTypes) => {
+  const [showSelectList, setShowSelectList] = React.useState(false);
   return (
-    <div className="px-8 py-4 bg-blue-300 rounded-t-lg flex justify-between items-center">
-      <div className="flex flex-wrap items-center">
-        <div className="font-bold text-2xl text-blue-800 mr-3 flex items-center">
-          <FaGlobe className="mr-2" />
-          {selectedMission.location}
+    <>
+      <div
+        className="px-8 py-4 bg-blue-300 rounded-t-lg flex justify-between items-center"
+        onClick={() => setShowSelectList(!showSelectList)}
+      >
+        <div className="flex flex-wrap items-center">
+          <div className="font-bold text-2xl text-blue-800 mr-3 flex items-center">
+            <FaGlobe className="mr-2" />
+            {selectedMission.location}
+          </div>
+          <div className="font-mono text-lg text-blue-700 mt-1">
+            {selectedMission.title}
+          </div>
         </div>
-        <div className="font-mono text-lg text-blue-700 mt-1">
-          {selectedMission.title}
-        </div>
+        {showSelectList ? (
+          <FaAngleUp className="text-xl text-blue-800" />
+        ) : (
+          <FaAngleDown className="text-xl text-blue-800" />
+        )}
       </div>
-      <FaAngleDown className="text-xl text-blue-800" />
-    </div>
+      <SelectList show={showSelectList} />
+    </>
   );
 };
 

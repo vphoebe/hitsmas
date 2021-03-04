@@ -9,6 +9,7 @@ module.exports = {
       gray: colors.blueGray,
       red: colors.red,
       blue: colors.indigo,
+      white: colors.white,
     },
     fontFamily: {
       sans: ["IBM Plex Sans", "sans-serif"],
@@ -16,7 +17,7 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: { borderRadius: ["last"] },
   },
   plugins: [],
 };

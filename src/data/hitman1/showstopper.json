@@ -1,10 +1,8 @@
 {
   "location": "Paris",
   "title": "The Showstopper",
-  "targets": [
-    "Viktor Novikov", 
-    "Dalia Margolis"
-  ],
+  "version": 1,
+  "targets": ["Viktor Novikov", "Dalia Margolis"],
   "disguises": [
     "Suit",
     "Auction Staff",
