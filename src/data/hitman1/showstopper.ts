@@ -15,7 +15,10 @@ const showstopper: MissionType = {
     { name: "Security Guard" },
     { name: "Stylist" },
     { name: "Sheikh" },
-    { name: "Tech Crew" },
+    {
+      name: "Tech Crew",
+      url: "https://hitman.fandom.com/wiki/Tech_Crew_(outfit)",
+    },
     { name: "Vampire Magician" },
   ],
   weapons: [

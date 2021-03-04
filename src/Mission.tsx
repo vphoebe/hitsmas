@@ -12,7 +12,7 @@ interface TargetProps {
 
 interface ObjectiveProps {
   Icon: IconType;
-  text: string;
+  objective: ObjectiveType;
 }
 
 function shuffleArray(array: ObjectiveType[]) {
@@ -24,11 +24,19 @@ function shuffleArray(array: ObjectiveType[]) {
   return newArray;
 }
 
-const Objective = ({ Icon, text }: ObjectiveProps) => {
+const Objective = ({ Icon, objective }: ObjectiveProps) => {
   return (
-    <div className="flex items-center bg-gray-200 py-2 rounded-md mb-2 shadow">
-      <Icon className="mx-3" /> {text}
-    </div>
+    <a
+      href={
+        objective.url ||
+        `https://hitman.fandom.com/wiki/${objective.name.replace(" ", "_")}`
+      }
+      rel="noopenner"
+      target="blank"
+      className="flex items-center bg-gray-200 py-2 rounded-md mb-2 shadow hover:bg-white transition-colors"
+    >
+      <Icon className="mx-3" /> {objective.name}
+    </a>
   );
 };
 
@@ -39,8 +47,8 @@ const Target = ({ target, disguise, weapon }: TargetProps) => {
         <FiTarget className="mr-2" /> {target}
       </div>
       <div className="font-mono">
-        <Objective Icon={FaSkullCrossbones} text={weapon.name} />
-        <Objective Icon={FaIdCard} text={disguise.name} />
+        <Objective Icon={FaSkullCrossbones} objective={weapon} />
+        <Objective Icon={FaIdCard} objective={disguise} />
       </div>
     </div>
   );
