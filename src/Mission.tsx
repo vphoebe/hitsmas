@@ -1,13 +1,13 @@
 import * as React from "react";
-import { MissionType } from "./types";
+import { MissionType, ObjectiveType } from "./types";
 import { IconType } from "react-icons";
 import { FaSkullCrossbones, FaIdCard } from "react-icons/fa";
 import { FiTarget } from "react-icons/fi";
 
 interface TargetProps {
   target: string;
-  disguise: string;
-  weapon: string;
+  disguise: ObjectiveType;
+  weapon: ObjectiveType;
 }
 
 interface ObjectiveProps {
@@ -15,7 +15,7 @@ interface ObjectiveProps {
   text: string;
 }
 
-function shuffleArray(array: string[]) {
+function shuffleArray(array: ObjectiveType[]) {
   const newArray = [...array];
   for (let i = newArray.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -39,8 +39,8 @@ const Target = ({ target, disguise, weapon }: TargetProps) => {
         <FiTarget className="mr-2" /> {target}
       </div>
       <div className="font-mono">
-        <Objective Icon={FaSkullCrossbones} text={weapon} />
-        <Objective Icon={FaIdCard} text={disguise} />
+        <Objective Icon={FaSkullCrossbones} text={weapon.name} />
+        <Objective Icon={FaIdCard} text={disguise.name} />
       </div>
     </div>
   );
@@ -49,7 +49,7 @@ const Target = ({ target, disguise, weapon }: TargetProps) => {
 const Mission = ({ mission }: { mission: MissionType }) => {
   const targets = mission.targets;
   const disguises = shuffleArray(mission.disguises);
-  const weapons = shuffleArray(mission.weapons.lethal);
+  const weapons = shuffleArray(mission.weapons);
   console.log(disguises, weapons);
   return (
     <div className="flex flex-col p-8 pt-2">

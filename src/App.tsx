@@ -3,9 +3,10 @@ import data from "./data";
 import Mission from "./Mission";
 import Select from "./Select";
 import Nav from "./Nav";
+import { MissionType } from "./types";
 
 function App() {
-  const [selectedMission, setSelectedMission] = React.useState(
+  const [selectedMission, setSelectedMission] = React.useState<MissionType>(
     data.missions[0]
   );
   return (
