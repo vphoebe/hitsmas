@@ -2,8 +2,10 @@ import * as React from "react";
 import { MissionType } from "./types";
 import data from "./data";
 
-const SingleGameList = ({ version }: { version: number }) => {
-  const matchedMissions = data.missions.filter((m) => m.version === version);
+const SingleGameList = ({ selectedVersion }: { selectedVersion: number }) => {
+  const matchedMissions = data.missions.filter(
+    (m) => m.version === selectedVersion
+  );
   return (
     <div className="flex flex-col w-full">
       {matchedMissions.map((m: MissionType) => {
@@ -22,29 +24,78 @@ const SingleGameList = ({ version }: { version: number }) => {
   );
 };
 
-const VersionSelect = () => {
+const VersionTab = ({
+  selected,
+  colorClass,
+  textColorClass = "text-black",
+  version,
+  setSelectedVersion,
+}: {
+  selected: boolean;
+  colorClass: string;
+  textColorClass?: string;
+  version: number;
+  setSelectedVersion: Function;
+}) => {
+  const selectedClass = selected ? "border-gray-200" : "border-blue-300";
   return (
-    <div className="flex flex-grow font-mono font-bold text-lg">
-      <div className="flex-grow text-center bg-gray-100 border-4 border-blue-300">
-        1
-      </div>
-      <div className="flex-grow text-center bg-red-600 text-white border-4 border-blue-300">
-        2
-      </div>
-      <div className="flex-grow text-center bg-gray-900 text-white border-4 border-blue-300">
-        3
-      </div>
+    <button
+      className={`font-mono font-bold text-lg flex-grow text-center border-8 ${colorClass} ${selectedClass} ${textColorClass}`}
+      onClick={() => setSelectedVersion(version)}
+    >
+      {version}
+    </button>
+  );
+};
+
+const VersionSelect = ({
+  selectedVersion,
+  setSelectedVersion,
+}: {
+  selectedVersion: number;
+  setSelectedVersion: Function;
+}) => {
+  return (
+    <div className="flex flex-grow">
+      <VersionTab
+        selected={selectedVersion === 1}
+        colorClass="bg-white"
+        version={1}
+        setSelectedVersion={setSelectedVersion}
+      />
+      <VersionTab
+        selected={selectedVersion === 2}
+        colorClass="bg-red-600"
+        version={2}
+        setSelectedVersion={setSelectedVersion}
+      />
+      <VersionTab
+        selected={selectedVersion === 3}
+        colorClass="bg-gray-900"
+        textColorClass="text-white"
+        version={3}
+        setSelectedVersion={setSelectedVersion}
+      />
     </div>
   );
 };
 
-const SelectList = ({ show }: { show: boolean }) => {
-  return show ? (
+const SelectList = ({
+  selectedVersion,
+  setSelectedVersion,
+}: {
+  selectedVersion: number;
+  setSelectedVersion: Function;
+}) => {
+  return (
     <div className="flex flex-row flex-wrap w-full">
-      <VersionSelect />
-      <SingleGameList version={1} />
+      <VersionSelect
+        selectedVersion={selectedVersion}
+        setSelectedVersion={setSelectedVersion}
+      />
+      <SingleGameList selectedVersion={selectedVersion} />
     </div>
-  ) : null;
+  );
 };
 
 export default SelectList;

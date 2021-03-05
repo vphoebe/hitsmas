@@ -10,6 +10,9 @@ interface SelectPropTypes {
 
 const Select = ({ selectedMission, setSelectedMission }: SelectPropTypes) => {
   const [showSelectList, setShowSelectList] = React.useState(false);
+  const [selectedVersion, setSelectedVersion] = React.useState(
+    selectedMission.version
+  );
   return (
     <>
       <div
@@ -31,7 +34,12 @@ const Select = ({ selectedMission, setSelectedMission }: SelectPropTypes) => {
           <FaAngleDown className="text-xl text-blue-800" />
         )}
       </div>
-      <SelectList show={showSelectList} />
+      {showSelectList ? (
+        <SelectList
+          selectedVersion={selectedVersion}
+          setSelectedVersion={setSelectedVersion}
+        />
+      ) : null}
     </>
   );
 };

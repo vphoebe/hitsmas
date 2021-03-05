@@ -1,5 +1,6 @@
 import * as React from "react";
 import { MissionType, ObjectiveType } from "./types";
+import data from "./data/";
 import { IconType } from "react-icons";
 import { FaSkullCrossbones, FaIdCard } from "react-icons/fa";
 import { FiTarget } from "react-icons/fi";
@@ -25,6 +26,13 @@ function shuffleArray(array: ObjectiveType[]) {
 }
 
 const Objective = ({ Icon, objective }: ObjectiveProps) => {
+  if (objective.generic) {
+    return (
+      <div className="flex items-center bg-gray-200 py-2 rounded-md mb-2 shadow">
+        <Icon className="mx-3" /> {objective.name}
+      </div>
+    );
+  }
   return (
     <a
       href={
@@ -57,7 +65,7 @@ const Target = ({ target, disguise, weapon }: TargetProps) => {
 const Mission = ({ mission }: { mission: MissionType }) => {
   const targets = mission.targets;
   const disguises = shuffleArray(mission.disguises);
-  const weapons = shuffleArray(mission.weapons);
+  const weapons = shuffleArray([...mission.weapons, ...data.global.weapons]);
   console.log(disguises, weapons);
   return (
     <div className="flex flex-col p-8 pt-2">
