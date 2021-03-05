@@ -27,7 +27,6 @@ const showstopper: MissionType = {
     { name: "Crowbar" },
     { name: "Fire Axe" },
     { name: "Fire Poker" },
-    { name: "Hammer" },
     { name: "Hatchet" },
     { name: "Kitchen Knife" },
     { name: "Letter Opener" },
