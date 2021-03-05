@@ -51,7 +51,7 @@ const Objective = ({ Icon, objective }: ObjectiveProps) => {
 const Target = ({ target, disguise, weapon }: TargetProps) => {
   return (
     <div className="my-6">
-      <div className="text-4xl font-bold text-red-500 mb-4 flex items-center tracking-tight">
+      <div className="text-2xl font-bold text-red-500 mb-4 flex items-center tracking-tight lg:text-4xl">
         <FiTarget className="mr-2" /> {target}
       </div>
       <div className="font-mono">

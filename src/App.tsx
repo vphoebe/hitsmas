@@ -11,7 +11,7 @@ function App() {
   );
   return (
     <div className="h-screen flex flex-col">
-      <div className="flex flex-col justify-center flex-grow px-2">
+      <div className="flex flex-col justify-center flex-grow p-4">
         <div className="container mx-auto max-w-md bg-gray-300 rounded-lg shadow-lg">
           <Select
             selectedMission={selectedMission}

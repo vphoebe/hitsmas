@@ -5,9 +5,11 @@ import data from "./data";
 const SingleGameList = ({
   selectedVersion,
   setSelectedMission,
+  setShowSelectList,
 }: {
   selectedVersion: number;
   setSelectedMission: Function;
+  setShowSelectList: Function;
 }) => {
   const matchedMissions = data.missions.filter(
     (m) => m.version === selectedVersion
@@ -17,13 +19,16 @@ const SingleGameList = ({
       {matchedMissions.map((m: MissionType) => {
         return (
           <button
-            className="px-8 py-2 bg-gray-200 flex justify-between items-center border-b border-blue-400 last:rounded-b-lg"
-            onClick={() => setSelectedMission(m)}
+            className="px-4 py-2 bg-gray-200 flex justify-between items-center border-b border-blue-400 last:rounded-b-lg"
+            onClick={() => {
+              setSelectedMission(m);
+              setShowSelectList(false);
+            }}
           >
-            <div className="font-bold text-xl text-blue-800 mr-3 flex items-center">
+            <div className="font-bold text-md text-blue-800 mr-3 flex items-center lg:text-xl">
               {m.location}
             </div>
-            <div className="font-mono text-md text-blue-700 mt-1">
+            <div className="font-mono text-sm text-blue-700 mt-1">
               {m.title}
             </div>
           </button>
@@ -94,11 +99,13 @@ const SelectList = ({
   setSelectedVersion,
   selectedMission,
   setSelectedMission,
+  setShowSelectList,
 }: {
   selectedVersion: number;
   setSelectedVersion: Function;
   selectedMission: MissionType;
   setSelectedMission: Function;
+  setShowSelectList: Function;
 }) => {
   return (
     <div className="flex flex-row flex-wrap w-full">
@@ -109,6 +116,7 @@ const SelectList = ({
       <SingleGameList
         selectedVersion={selectedVersion}
         setSelectedMission={setSelectedMission}
+        setShowSelectList={setShowSelectList}
       />
     </div>
   );
