@@ -66,7 +66,6 @@ const Mission = ({ mission }: { mission: MissionType }) => {
   const targets = mission.targets;
   const disguises = shuffleArray(mission.disguises);
   const weapons = shuffleArray([...mission.weapons, ...data.global.weapons]);
-  console.log(disguises, weapons);
   return (
     <div className="flex flex-col p-8 pt-2">
       {targets.map((trg, i) => (

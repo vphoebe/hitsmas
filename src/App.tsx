@@ -6,8 +6,12 @@ import Nav from "./Nav";
 import { MissionType } from "./types";
 
 function App() {
+  const [missionKey, setMissionKey] = React.useState<number>(
+    new Date().getTime()
+  );
   const [selectedMission, setSelectedMission] = React.useState<MissionType>(
-    data.missions[0]
+    () =>
+      data.missions[Math.floor(Math.max(Math.random() * data.missions.length))]
   );
   return (
     <div className="h-screen flex flex-col">
@@ -16,8 +20,9 @@ function App() {
           <Select
             selectedMission={selectedMission}
             setSelectedMission={setSelectedMission}
+            setMissionKey={setMissionKey}
           />
-          <Mission mission={selectedMission} />
+          <Mission mission={selectedMission} key={missionKey} />
           <Nav />
         </div>
       </div>

@@ -19,7 +19,7 @@ const SingleGameList = ({
       {matchedMissions.map((m: MissionType) => {
         return (
           <button
-            className="px-4 py-2 bg-gray-200 flex justify-between items-center border-b border-blue-400 last:rounded-b-lg"
+            className="px-4 py-2 bg-gray-200 flex justify-between items-center border-b border-blue-400 last:rounded-b-lg hover:bg-gray-100 transition-colors"
             onClick={() => {
               setSelectedMission(m);
               setShowSelectList(false);
