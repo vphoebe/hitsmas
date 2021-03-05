@@ -38,6 +38,8 @@ const Select = ({ selectedMission, setSelectedMission }: SelectPropTypes) => {
         <SelectList
           selectedVersion={selectedVersion}
           setSelectedVersion={setSelectedVersion}
+          selectedMission={selectedMission}
+          setSelectedMission={setSelectedMission}
         />
       ) : null}
     </>
