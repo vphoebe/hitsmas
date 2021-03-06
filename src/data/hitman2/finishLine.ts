@@ -7,8 +7,8 @@ const finishLine: MissionType = {
   targets: ["Sierra Knox", "Robert Knox"],
   disguises: [
     { name: "Florida Fit" },
-    { name: "Any racing driver", generic: true },
-    { name: "Any mechanic", generic: true },
+    { name: "Any racing driver", link: false },
+    { name: "Any mechanic", link: false },
     { name: "Event Security" },
     { name: "Event Crew" },
     { name: "Florida Man" },

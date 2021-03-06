@@ -6,7 +6,7 @@ const showstopper: MissionType = {
   version: 1,
   targets: ["Viktor Novikov", "Dalia Margolis"],
   disguises: [
-    { name: "Tuxedo" },
+    { name: "Tuxedo", outfit: false },
     { name: "Auction Staff" },
     { name: "Chef" },
     { name: "CICADA Bodyguard" },
@@ -15,10 +15,7 @@ const showstopper: MissionType = {
     { name: "Security Guard" },
     { name: "Stylist" },
     { name: "Sheikh" },
-    {
-      name: "Tech Crew",
-      url: "https://hitman.fandom.com/wiki/Tech_Crew_(outfit)",
-    },
+    { name: "Tech Crew" },
     { name: "Vampire Magician" },
   ],
   weapons: [
