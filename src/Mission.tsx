@@ -14,6 +14,7 @@ interface TargetProps {
 interface ObjectiveProps {
   Icon: IconType;
   objective: ObjectiveType;
+  disguise?: boolean;
 }
 
 function shuffleArray(array: ObjectiveType[]) {
@@ -25,20 +26,20 @@ function shuffleArray(array: ObjectiveType[]) {
   return newArray;
 }
 
-const Objective = ({ Icon, objective }: ObjectiveProps) => {
-  if (objective.generic) {
+const Objective = ({ Icon, objective, disguise = false }: ObjectiveProps) => {
+  if (objective.link === false) {
     return (
-      <div className="flex items-center bg-gray-200 py-2 rounded-md mb-2 shadow">
+      <div className="flex items-center bg-gray-200 opacity-70 py-2 rounded-md mb-2 shadow">
         <Icon className="mx-3" /> {objective.name}
       </div>
     );
   }
   return (
     <a
-      href={
-        objective.url ||
-        `https://hitman.fandom.com/wiki/${objective.name.replace(" ", "_")}`
-      }
+      href={`https://hitman.fandom.com/wiki/${objective.name.replace(
+        " ",
+        "_"
+      )}${disguise ? `_(outfit)` : ""}`}
       rel="noopenner"
       target="blank"
       className="flex items-center bg-gray-200 py-2 rounded-md mb-2 shadow hover:bg-white transition-colors"
@@ -56,7 +57,7 @@ const Target = ({ target, disguise, weapon }: TargetProps) => {
       </div>
       <div className="font-mono">
         <Objective Icon={FaSkullCrossbones} objective={weapon} />
-        <Objective Icon={FaIdCard} objective={disguise} />
+        <Objective Icon={FaIdCard} objective={disguise} disguise={true} />
       </div>
     </div>
   );

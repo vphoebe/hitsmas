@@ -1,7 +1,7 @@
 export type ObjectiveType = {
   name: string;
-  url?: string;
-  generic?: boolean;
+  outfit?: boolean; // append _(Outfit) to url
+  link?: boolean; // link to wiki
 };
 
 export type MissionType = {
