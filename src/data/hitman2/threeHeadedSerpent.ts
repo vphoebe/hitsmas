@@ -6,7 +6,7 @@ const threeHeadedSerpent: MissionType = {
   version: 2,
   targets: ["Rico Delgado", "Andrea Martinez", "Jorge Franco"],
   disguises: [
-    { name: "Casual Tourist" },
+    { name: "Casual Tourist", outfit: false },
     { name: "Barman" },
     { name: "Chef" },
     { name: "Coca Field Guard" },

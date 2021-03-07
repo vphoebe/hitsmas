@@ -1,0 +1,45 @@
+import { MissionType } from "../../types";
+
+const chasingAGhost: MissionType = {
+  location: "Mumbai",
+  title: "Chasing a Ghost",
+  version: 2,
+  targets: ["Wazir Kale", "Vanya Shah", "Dawood Rangan"],
+  disguises: [
+    { name: "Imperial Classic", outfit: false },
+    { name: "Barber" },
+    { name: "Bollywood Bodyguard" },
+    { name: "Bollywood Crew" },
+    { name: "Dancer" },
+    { name: "Elite Thug" },
+    { name: "Food Vendor" },
+    { name: "Holy Man" },
+    { name: "Kashmirian" },
+    { name: "Laundry Foreman" },
+    { name: "Laundry Worker" },
+    { name: "Lead Actor" },
+    { name: "Local Security" },
+    { name: "Metal Worker" },
+    { name: "Painter" },
+    { name: "Queen's Bodyguard" },
+    { name: "Queen's Guard" },
+    { name: "Tailer" },
+    { name: "Thug" },
+    { name: "Vanya's Servant" },
+  ],
+  weapons: [
+    { name: "Barber Razor" },
+    { name: "Amputation Knife" },
+    { name: "Beak Staff" },
+    { name: "Cleaver" },
+    { name: "Fire Axe" },
+    { name: "Folding Knife" },
+    { name: "Letter Opener" },
+    { name: "Old Axe" },
+    { name: "Saber" },
+    { name: "Scissors" },
+    { name: "Screwdriver" },
+  ],
+};
+
+export default chasingAGhost;

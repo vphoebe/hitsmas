@@ -9,6 +9,9 @@ import gildedCage from "./hitman1/gildedCage";
 import club27 from "./hitman1/club27";
 import freedomFighters from "./hitman1/freedomFighters";
 import situsInversus from "./hitman1/situsInversus";
+import chasingAGhost from "./hitman2/chasingAGhost";
+import anotherLife from "./hitman2/anotherLife";
+import arkSociety from "./hitman2/arkSociety";
 
 const data: DataType = {
   global: {
@@ -23,6 +26,9 @@ const data: DataType = {
     situsInversus,
     finishLine,
     threeHeadedSerpent,
+    chasingAGhost,
+    anotherLife,
+    arkSociety,
     apexPredator,
   ],
 };
