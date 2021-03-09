@@ -4,6 +4,11 @@ export type ObjectiveType = {
   link?: boolean; // link to wiki
 };
 
+export type WildcardType = {
+  name: string;
+  description: string;
+};
+
 export type MissionType = {
   location: string;
   title: string;
@@ -11,11 +16,13 @@ export type MissionType = {
   targets: string[];
   disguises: ObjectiveType[];
   weapons: ObjectiveType[];
+  wildcards?: WildcardType[];
 };
 
 export type DataType = {
   global: {
     weapons: ObjectiveType[];
+    wildcards: WildcardType[];
   };
   missions: MissionType[];
 };

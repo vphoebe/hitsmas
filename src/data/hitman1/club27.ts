@@ -29,6 +29,12 @@ const club27: MissionType = {
     { name: "Sapper's Axe" },
     { name: "Screwdriver" },
   ],
+  wildcards: [
+    {
+      name: "You Have to Play the Drums",
+      description: "You have to play the Drums",
+    },
+  ],
 };
 
 export default club27;

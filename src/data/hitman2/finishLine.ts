@@ -41,6 +41,12 @@ const finishLine: MissionType = {
     { name: "Scissors" },
     { name: "Screwdriver" },
   ],
+  wildcards: [
+    {
+      name: "Making Headlines",
+      description: "Become Florida Man",
+    },
+  ],
 };
 
 export default finishLine;

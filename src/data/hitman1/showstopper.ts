@@ -31,6 +31,16 @@ const showstopper: MissionType = {
     { name: "Scissors" },
     { name: "Screwdriver" },
   ],
+  wildcards: [
+    {
+      name: "Helmut Hair",
+      description: "Become Helmut Kruger",
+    },
+    {
+      name: "Drop the Bass",
+      description: "Drop a speaker while both targets are still alive",
+    },
+  ],
 };
 
 export default showstopper;

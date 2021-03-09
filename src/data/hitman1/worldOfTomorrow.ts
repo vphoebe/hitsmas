@@ -50,6 +50,16 @@ const worldOfTomorrow: MissionType = {
     { name: "Scissors" },
     { name: "Screwdriver" },
   ],
+  wildcards: [
+    {
+      name: "Just Like Momma Used to Make",
+      description: "Poison someone with Expired Spaghetti Sauce",
+    },
+    {
+      name: "Do It the Hard Way",
+      description: "Eliminate virus without using laptops",
+    },
+  ],
 };
 
 export default worldOfTomorrow;

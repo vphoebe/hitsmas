@@ -38,6 +38,12 @@ const threeHeadedSerpent: MissionType = {
     { name: "Scissors" },
     { name: "Screwdriver" },
   ],
+  wildcards: [
+    {
+      name: "D.A.R.E.",
+      description: "Harm somebody with drugs",
+    },
+  ],
 };
 
 export default threeHeadedSerpent;

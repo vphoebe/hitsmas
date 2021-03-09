@@ -1,4 +1,5 @@
 import globalWeapons from "./global/weapons";
+import globalWildcards from "./global/wildcard";
 import { DataType } from "../types";
 import showstopper from "./hitman1/showstopper";
 import finishLine from "./hitman2/finishLine";
@@ -16,6 +17,7 @@ import arkSociety from "./hitman2/arkSociety";
 const data: DataType = {
   global: {
     weapons: globalWeapons,
+    wildcards: globalWildcards,
   },
   missions: [
     showstopper,
