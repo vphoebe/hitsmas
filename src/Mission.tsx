@@ -53,7 +53,7 @@ const Objective = ({ Icon, objective, disguise = false }: ObjectiveProps) => {
 const Target = ({ target, disguise, weapon }: TargetProps) => {
   return (
     <div className="my-6">
-      <div className="text-2xl font-bold text-red-500 mb-4 flex items-center tracking-tight lg:text-4xl">
+      <div className="text-xl font-bold text-red-500 mb-4 flex items-center tracking-tight lg:text-2xl">
         <FiTarget className="mr-2" /> {target}
       </div>
       <div className="font-mono">
@@ -70,7 +70,7 @@ const Wildcard = ({ wildcard }: { wildcard: WildcardType }) => {
       <div className="text-xl font-bold text-gray-800 mb-4 flex items-center lg:text-2xl">
         <FaAsterisk className="mr-2" /> {wildcard.name}
       </div>
-      <div className="font-mono flex items-center bg-gray-200 opacity-90 p-2 rounded-md mb-2 shadow">
+      <div className="font-mono flex items-center bg-gray-200 opacity-90 py-2 px-4 rounded-md mb-2 shadow">
         {wildcard.description}
       </div>
     </div>
