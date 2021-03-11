@@ -11,7 +11,8 @@ const globalWildcards: WildcardType[] = [
   },
   {
     name: "Minimalist",
-    description: "Items cannot be brought into level",
+    description:
+      "All items must be dropped (and not retrieved) immediately after starting level",
   },
   {
     name: "Get Down, Mr. President",

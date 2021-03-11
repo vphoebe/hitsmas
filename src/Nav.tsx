@@ -12,7 +12,6 @@ const Nav = () => {
         className="flex items-center"
       >
         <FaGithub className="mr-3" />
-        <div className="font-mono text-gray-700">vphoebe</div>
       </a>
     </nav>
   );

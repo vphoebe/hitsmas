@@ -1,9 +1,10 @@
 import * as React from "react";
-import { MissionType, ObjectiveType } from "./types";
+import { MissionType, ObjectiveType, WildcardType } from "./types";
 import data from "./data/";
 import { IconType } from "react-icons";
-import { FaSkullCrossbones, FaIdCard } from "react-icons/fa";
+import { FaSkullCrossbones, FaIdCard, FaAsterisk } from "react-icons/fa";
 import { FiTarget } from "react-icons/fi";
+import globalWildcards from "./data/global/wildcard";
 
 interface TargetProps {
   target: string;
@@ -17,7 +18,7 @@ interface ObjectiveProps {
   disguise?: boolean;
 }
 
-function shuffleArray(array: ObjectiveType[]) {
+function shuffleArray(array: any[]) {
   const newArray = [...array];
   for (let i = newArray.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -63,10 +64,25 @@ const Target = ({ target, disguise, weapon }: TargetProps) => {
   );
 };
 
+const Wildcard = ({ wildcard }: { wildcard: WildcardType }) => {
+  return (
+    <div className="my-6">
+      <div className="text-xl font-bold text-gray-800 mb-4 flex items-center lg:text-2xl">
+        <FaAsterisk className="mr-2" /> {wildcard.name}
+      </div>
+      <div className="font-mono flex items-center bg-gray-200 opacity-90 p-2 rounded-md mb-2 shadow">
+        {wildcard.description}
+      </div>
+    </div>
+  );
+};
+
 const Mission = ({ mission }: { mission: MissionType }) => {
   const targets = mission.targets;
   const disguises = shuffleArray(mission.disguises);
   const weapons = shuffleArray([...mission.weapons, ...data.global.weapons]);
+  const missionWildcards = mission.wildcards ?? [];
+  const wildcards = shuffleArray([...globalWildcards, ...missionWildcards]);
   return (
     <div className="flex flex-col p-8 pt-2">
       {targets.map((trg, i) => (
@@ -77,6 +93,9 @@ const Mission = ({ mission }: { mission: MissionType }) => {
           key={trg.toLowerCase().trim()}
         />
       ))}
+      <Wildcard
+        wildcard={wildcards[Math.floor(Math.random() * wildcards.length)]}
+      />
     </div>
   );
 };
