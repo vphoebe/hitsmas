@@ -13,6 +13,9 @@ import situsInversus from "./hitman1/situsInversus";
 import chasingAGhost from "./hitman2/chasingAGhost";
 import anotherLife from "./hitman2/anotherLife";
 import arkSociety from "./hitman2/arkSociety";
+import nightcall from "./hitman2/nightcall";
+import goldenHandshake from "./hitman2/goldenHandshake";
+import lastResort from "./hitman2/lastResort";
 
 const data: DataType = {
   global: {
@@ -26,11 +29,14 @@ const data: DataType = {
     club27,
     freedomFighters,
     situsInversus,
+    nightcall,
     finishLine,
     threeHeadedSerpent,
     chasingAGhost,
     anotherLife,
     arkSociety,
+    goldenHandshake,
+    lastResort,
     apexPredator,
   ],
 };

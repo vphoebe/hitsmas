@@ -1,0 +1,46 @@
+import { MissionType } from "../../types";
+
+const lastResort: MissionType = {
+  location: "Haven Island",
+  title: "The Last Resort",
+  version: 2,
+  targets: ["Tyson Williams", "Ljudmila Vetrova", "Steven Bradley"],
+  disguises: [
+    { name: "The Tropical Islander", outfit: false },
+    { name: "Boat Captain" },
+    { name: "Bodyguard" },
+    { name: "Butler" },
+    { name: "Chef" },
+    { name: "Doctor" },
+    { name: "Gas Suit" },
+    { name: "Life Guard" },
+    { name: "Masseur" },
+    { name: "Personal Trainer" },
+    { name: "Resort Guard" },
+    { name: "Resort Staff" },
+    { name: "Snorkel Instructor" },
+    { name: "Swimwear" },
+    { name: "Tech Crew" },
+    { name: "Villa Guard" },
+    { name: "Villa Staff" },
+    { name: "Waiter" },
+  ],
+  weapons: [
+    { name: "Barber Razor" },
+    { name: "Cleaver" },
+    { name: "Earphones" },
+    { name: "Fire Axe" },
+    { name: "Folding Knife" },
+    { name: "Hatchet" },
+    { name: "Jarl's Pirate Saber" },
+    { name: "Kitchen Knife" },
+    { name: "Letter Opener" },
+    { name: "Machete" },
+    { name: "Scalpel" },
+    { name: "Scissors" },
+    { name: "Screwdriver" },
+    { name: "Stethoscope" },
+  ],
+};
+
+export default lastResort;
