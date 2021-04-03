@@ -16,6 +16,10 @@ import arkSociety from "./hitman2/arkSociety";
 import nightcall from "./hitman2/nightcall";
 import goldenHandshake from "./hitman2/goldenHandshake";
 import lastResort from "./hitman2/lastResort";
+import onTopOfTheWorld from "./hitman3/onTopOfTheWorld";
+import deathInTheFamily from "./hitman3/deathInTheFamily";
+import endOfAnEra from "./hitman3/endOfAnEra";
+import farewell from "./hitman3/farewell";
 
 const data: DataType = {
   global: {
@@ -37,7 +41,11 @@ const data: DataType = {
     arkSociety,
     goldenHandshake,
     lastResort,
+    onTopOfTheWorld,
+    deathInTheFamily,
     apexPredator,
+    endOfAnEra,
+    farewell,
   ],
 };
 
